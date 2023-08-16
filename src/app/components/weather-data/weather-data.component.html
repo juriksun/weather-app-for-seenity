@@ -1,0 +1,21 @@
+<div class="main-weather-card">
+    <mat-card>
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-subtitle>Weather result for</mat-card-subtitle>
+            <mat-card-title>{{ name }} - {{ state }} - {{ conuntry }}</mat-card-title>
+            <mat-card-subtitle>{{ date| date:'EEEE' }}</mat-card-subtitle>
+            <mat-card-subtitle><span class="description-text">{{ description }}</span></mat-card-subtitle>
+            <mat-card-subtitle>{{ temp }} &#176;C</mat-card-subtitle>
+            <img mat-card-md-image [src]="'https://openweathermap.org/img/wn/' + weaterIcon +'@4x.png'">
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+            <router-outlet></router-outlet>
+            <!-- <app-daily-data [weatherData]="origWeatherData"></app-daily-data> -->
+        </mat-card-content>
+        <mat-card-footer *ngIf="loading">
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        </mat-card-footer>
+      </mat-card>
+</div>

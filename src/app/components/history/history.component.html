@@ -1,0 +1,13 @@
+<div class="history-heder">
+    <h2>Hestory</h2>
+    <button mat-icon-button matTooltip="Delete History" [disabled]="!($historyData | async).length" (click)="onDeleteHistory()">
+        <mat-icon>delete</mat-icon>
+    </button>
+</div>
+<mat-list>
+    <mat-list-item matRipple *ngFor="let geocodingLocElement of $historyData | async" (click)="onOptionSelected(geocodingLocElement)">
+        <span matListItemTitle>{{ geocodingLocElement.name }}</span>
+        <span matListItemLine>{{ geocodingLocElement.state }}</span>
+        <span matListItemLine>{{ geocodingLocElement.country }}</span>
+    </mat-list-item>
+</mat-list>

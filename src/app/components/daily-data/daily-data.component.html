@@ -1,0 +1,16 @@
+<div class="sort-by-container">
+    sort by:
+    <div matRipple (click)="onSort(sortType.day)" [ngClass]="{'selected': sortType.day == sort}">day</div>
+    <div matRipple (click)="onSort(sortType.minTemp)" [ngClass]="{'selected': sortType.minTemp == sort}">min temp</div>
+    <div matRipple (click)="onSort(sortType.maxTemp)" [ngClass]="{'selected': sortType.maxTemp == sort}">max temp</div>
+</div>
+<div class="weather-days-container" [ngClass]="{ 'disabled': disabled}">
+    <div class="weather-day-container" matRipple 
+        *ngFor="let weatherEl of sortedData" [ngClass]="{'selected': selectedId == weatherEl.id}" 
+        (click)="onDayWeatherSelect(weatherEl)"
+    >
+        <h4 class="weather-header">{{ weatherEl.date | date:'EE'}}</h4>
+        <img class="weather-image" [src]="'https://openweathermap.org/img/wn/' + weatherEl.icon +'.png'">
+        <div class="weather-temp">{{ weatherEl.maxTemp }}&#176;C <span>{{ weatherEl.minTemp }}&#176;C</span></div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+.sort-by-container>div{
+    color: rgba(0, 0, 0, 0.54);
+    margin-left: 10px;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: -6px;
+}
+.sort-by-container>div.selected{
+    color: #673ab7;
+}
+.weather-days-container{
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.weather-day-container{
+    border-radius: 5px;
+    padding: 0 10px;
+}
+.weather-day-container.selected{
+    outline: 1px solid rgba(0,0,0,.2);
+}
+
+.weather-day-container:hover{
+    border-radius: 5px;
+    background-color: rgba(0,0,0,0.02);
+}
+.weather-header{
+    margin-bottom: 5px;
+}
+.weather-header, .weather-temp{
+    text-align: center;
+}
+.weather-temp{
+    font-size: 11px;
+}

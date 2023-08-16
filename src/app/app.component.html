@@ -1,0 +1,11 @@
+<app-header (historyButtonToggle)="drawer.toggle()" (selectedLocation)="onSelectedLocation($event)"></app-header>
+<mat-drawer-container>
+    <mat-drawer #drawer mode="side" [opened]="true">
+        <app-history (selectedLocation)="onSelectedLocation($event)"></app-history>
+    </mat-drawer>
+    <mat-drawer-content>
+       <app-weather-data *ngIf="geoCordData" [geocodingData]="geoCordData"></app-weather-data>
+    </mat-drawer-content>
+</mat-drawer-container>
+
+

@@ -1,0 +1,28 @@
+<mat-toolbar>
+    <button mat-icon-button matTooltip="History" aria-label="History" (click)="onHistoryButton()">
+      <mat-icon>history</mat-icon>
+    </button>
+    <form style="width:100%; padding-top: 20px;">
+      <mat-form-field style="width:100%">
+        <input type="text"
+               placeholder="Search"
+               matInput
+               [formControl]="searchControl"
+               [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onOptionSelected($event)" [displayWith]="getOptionTextName">
+          <mat-option *ngFor="let option of searchOptions | async" [value]="option" >
+            {{ getOptionTextName(option) }}
+          </mat-option>
+        </mat-autocomplete>
+        <mat-progress-spinner *ngIf="searching" matSuffix
+            color="color"
+            mode="indeterminate"
+            diameter="20"
+        >
+        </mat-progress-spinner>
+        <mat-icon matPrefix>search</mat-icon>
+      </mat-form-field>
+    </form>
+    <span class="spacer"></span>
+    <span>Weather App For Seenity</span>
+</mat-toolbar>

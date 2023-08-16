@@ -1,0 +1,10 @@
+
+.description-text{
+    text-transform:capitalize;
+}
+.main-weather-card{
+    width: 600px;
+}
+.weather-temp>span{
+    color: rgba(0, 0, 0, 0.54);
+}
