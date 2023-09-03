@@ -22,7 +22,7 @@ export class HeaderComponent{
     constructor(private geocodingService: GeocodingService) {}
 
     ngOnInit() {
-        this.searchOptions =this.searchControl.valueChanges.pipe(
+        this.searchOptions = this.searchControl.valueChanges.pipe(
             startWith(''),
             debounceTime(1000),
             distinctUntilChanged(),

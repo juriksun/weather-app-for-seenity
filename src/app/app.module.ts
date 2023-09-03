@@ -39,9 +39,6 @@ import { ApiKeyInterceptor } from './core/api-key.interceptor';
     BrowserAnimationsModule,
     HttpClientModule,
     MaterialModule,
-    MatCardModule,
-    MatProgressBarModule,
-    MatSelectModule,
     NgxChartsModule
   ],
   providers: [

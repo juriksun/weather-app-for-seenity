@@ -1,5 +1,5 @@
-import { Injectable, OnDestroy } from "@angular/core";
-import { BehaviorSubject, Subject } from "rxjs";
+import { Injectable } from "@angular/core";
+import { BehaviorSubject } from "rxjs";
 import { GeocodingLoc } from "../models/geocodin-log.model";
 
 @Injectable({
@@ -8,7 +8,6 @@ import { GeocodingLoc } from "../models/geocodin-log.model";
 export class HistoryService {
 
     private readonly _$historyData: BehaviorSubject<GeocodingLoc[]>;
-    private ngUnsubscribe: Subject<any> = new Subject();
 
     get $historyData() {
         return this._$historyData;
